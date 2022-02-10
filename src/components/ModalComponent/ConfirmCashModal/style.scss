@@ -1,0 +1,39 @@
+.modal{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Helvetica;
+    &__title{
+        img{
+            height: 40px;
+        }
+        p{
+            color: #52575C;
+            font-weight: 700;
+            font-size: 1.4em;
+        }
+        
+    }
+    &__message{
+        font-family: Helvetica;        
+        width: 320px;
+        font-size: 0.945em;
+        color: #52575C;
+        font-weight: 500  !important;      
+    }
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        .action{
+            width: 152px;
+            border-radius:1.8px;
+            height: 45px !important;
+        }
+        p{
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+    }
+}

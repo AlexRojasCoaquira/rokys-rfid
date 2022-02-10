@@ -1,0 +1,12 @@
+<div class="menu">
+    <v-row class="menu__list mt-6">
+        <ul class="menu__list__item" >
+            <li v-for="(item,index) in menuList" class="list" :key="index" :class="$route.name==item.name||($route.name=='order'&&item.name=='home')?'active':''" @click="resolveRouter(item.name)">
+                <div class="d-flex align-center ml-5">
+                    <v-icon>{{item.icon}}</v-icon>
+                    <p class="ml-4 mb-0">{{item.label}}</p>
+                </div>
+            </li>
+        </ul>
+    </v-row>
+</div>

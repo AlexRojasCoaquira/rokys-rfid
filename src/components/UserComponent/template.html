@@ -1,0 +1,50 @@
+<div class="page">
+    <div class="page__head">Mis Clientes Rokys</div>
+    <div class="page__content mt-3">
+          <v-simple-table height="420px" min-width="300" fixed-header  >
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <th class="text-center">
+                    DNI
+                  </th>
+                  <th class="text-center">
+                    Nombres
+                    </th>
+                  <th class="text-center">
+                    Apellidos
+                  </th>
+                  <th class="text-center">
+                    Estado
+                  </th>
+                  <th class="text-center">
+                    Acciones
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="" >
+                <tr
+                  v-for="(item,index) in userList" :key="index"
+                >
+                  <td class="text-center" >{{item.dni}}</td>
+                  <td class="text-center" >{{item.nombres}}</td>
+                  <td class="text-center" >{{item.apellidos}}</td>
+                  <td class="text-center" >{{item.status=='inside'?'Activo':item.status=='eating'?'Comiendo':'Inactivo'}}</td>
+                  <td class="text-center" >
+                      <v-icon>
+                          edit
+                      </v-icon>
+                  </td>                
+                </tr>
+              </tbody>
+            </template>
+        </v-simple-table>
+        <div class="paginate ">
+            <v-row class="justify-center">
+              <v-col md="6">
+                <v-pagination color="#000" style="width: 100%;"  :length="10" :total-visible="10"></v-pagination>
+              </v-col>
+            </v-row>
+          </div>    
+    </div>
+</div>

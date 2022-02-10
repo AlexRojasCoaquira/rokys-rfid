@@ -1,0 +1,46 @@
+.modal{
+    height: 500px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // font-family: Helvetica;
+    &__title{
+        color: #52575C;
+        font-weight: 700;
+        font-size: 1.4em;
+        
+    }
+    &__search{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        label{
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        .buscar{
+            max-width: 500px;
+        }
+    }
+    &__table{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .table{
+            border: 1px solid #CDCDCD;
+            width: 80%;
+        }
+    }
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            // font-family: Helvetica;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+    }
+}

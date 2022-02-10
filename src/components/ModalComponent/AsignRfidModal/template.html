@@ -1,0 +1,70 @@
+<v-dialog v-model="dialog" persistent width="900" overlay-opacity="0.9">
+    <v-card style="min-height: 520px;" class="d-flex align-center justify-center">
+        <v-container fluid class="modal  py-4 ">
+            <div class="">
+                <div class="modal__title ml-5">Asignar RFID al pedido</div>
+                <!-- <div class="modal__message  mt-2 mb-4 mx-5">aaaaaa</div> -->
+            </div>
+            <div class="modal__search my-5">
+                <label for="dni">Ingrese el DNI</label>
+                <v-text-field
+                v-model="dni"
+                class="buscar"
+                placeholder="Buscar"
+                color="#FFF"
+                hide-details
+                dense
+                outlined
+                @keyup="filter(dni)"
+                ></v-text-field>
+            </div>
+            <div class="modal__table d-flex">
+                <div class="table">                
+                    <v-simple-table height="300px" fixed-header  >
+                        <template v-slot:default>
+                          <thead>
+                            <tr>
+                              <th class="text-center">
+                                Nombres
+                              </th>
+                              <th class="text-center">
+                                Apellidos
+                              </th>
+                              <th class="text-center">
+                                DNI
+                                </th>
+        
+                              <th class="text-center">
+                                Estado
+                              </th>
+                              <th class="text-center">
+                                RFID
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody class="" >
+                            <tr
+                              v-for="(item,index) in userList" :key="index"
+                            >
+                              <td class="text-center" >{{item.nombres}}</td>
+                              <td class="text-center" >{{item.apellidos}}</td>
+                              <td class="text-center">{{item.dni}}</td>
+                              <td class="text-center">{{item.status=='inside'?'Activo':item.status=='eating'?'Comiendo':''}}</td>
+                              <td class="text-center">
+                                  <v-btn  tile elevation="0" small color="green" @click="assignRFID(item.id)" :disabled="item.status=='eating'">
+                                      <p style="color:#fff">Asignar RFID</p>
+                                  </v-btn>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </template>
+                    </v-simple-table>
+                </div>
+            </div>
+            <div class="modal__btn mx-5 mt-6">
+                <v-btn class="action ml-auto" tile color="#5F5F5F" dark  elevation="0" @click="dialog=false"><p>Terminar</p></v-btn>
+                <!-- <v-btn  class="action" tile color="#FF0000" dark large :loading="loading" @click="submit"><p>Aceptar</p></v-btn> -->
+            </div>
+        </v-container>
+    </v-card>
+</v-dialog>

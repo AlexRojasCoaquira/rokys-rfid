@@ -1,0 +1,44 @@
+.menu{
+    &__logo{
+        img{
+            width: 100px;
+            border: 1px solid #000;
+        }
+    }
+    &__list{
+        height: 60vh;
+        &__item{
+            width: 100%;
+            padding-left: 0;
+            list-style: none; 
+            cursor: pointer;
+            .active{
+                border-left: 5px solid #F7971E;
+                color: #20252C;  
+                .v-icon{
+                    color: #20252C;  
+                }                                   
+            }                 
+            li{             
+            display: flex;
+            align-items: center;
+            height: 45px;
+            margin-bottom: 10px;
+            border-left: 5px solid transparent;
+            border-radius: 1;
+                &:hover{
+                    color: #20252C;
+                    font-weight: 500;
+                    background-color: rgba(170, 162, 162, 0.192);
+
+                }                             
+            } 
+            p{
+                font-size: 0.855em;
+                font-weight: normal; 
+                letter-spacing: 0.15px;     
+            }
+
+        }
+    }
+}

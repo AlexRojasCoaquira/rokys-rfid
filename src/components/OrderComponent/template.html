@@ -1,0 +1,68 @@
+<div class="page">
+    <div class="page__head">
+      <p>Tabla de pedidos Rokys</p>
+    </div>
+    <div class="d-flex  justify-space-evenly page__options mt-2">
+      <v-col md="2" class=" d-flex flex-column option align-content-between">
+        <div class="">
+        <v-btn dark color="#F7971E" tile elevation="1" class="mt-5" @click.prevent="AddProductOrder">
+           <p>Agregar</p> 
+        </v-btn>
+        <v-btn dark color="#F7971E" tile elevation="1" class="mt-5">
+           <p>Asignar RFID</p> 
+        </v-btn>
+        <v-btn dark color="#F7971E" tile elevation="1" class="mt-5">
+           <p>Enviar a caja</p> 
+        </v-btn>
+        </div>
+        <v-btn dark color="#20252C" tile elevation="1" class="mt-auto">
+          <p>Terminar</p>  
+        </v-btn>
+      </v-col>
+    <v-col md="8" class="ml-auto text-center mr-10" >
+        <p style="font-size:1.2em; font-weight:600;">Tabla de pedidos</p>
+         <v-simple-table min-height="320px" min-width="300" fixed-header  >
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-center">
+                      Item
+                    </th>
+                    <th class="text-center">
+                      Código
+                    </th>
+                    <th class="text-center">
+                      Producto
+                      </th>
+                    <th class="text-center">
+                      Precio (S/.)
+                    </th>
+                    <th class="text-center">
+                      Cantidad
+                    </th>
+                    <th class="text-center">
+                      Subtotal (S/.)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="" >
+                  <tr
+                    v-for="(item,index) in orderList" :key="index"
+                  >
+                    <td class="text-center" >{{index+1}}</td>
+                    <td class="text-center" >{{item.code}}</td>
+                    <td class="text-center">{{item.name}}</td>
+                    <td class="text-center">{{item.price}}</td>
+                    <td class="text-center">{{item.quantity}}</td>
+                    <td class="text-center">{{item.quantity*item.price}}</td>
+                  </tr>
+                </tbody>
+              </template>
+          </v-simple-table>
+    </v-col>
+    </div>
+    <add-modal
+    ref="addProductModal">
+
+    </add-modal>
+  </div>

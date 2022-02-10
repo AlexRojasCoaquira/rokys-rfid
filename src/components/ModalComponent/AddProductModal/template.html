@@ -1,0 +1,17 @@
+<v-dialog v-model="dialog" persistent width="900" overlay-opacity="0.9">
+    <v-card style="min-height: 550px;" class="d-flex align-center justify-center">
+        <v-container fluid class="modal py-1">
+            <div class="">
+                <div class="modal__title ml-5">Agregar productos a la lista</div>
+                <!-- <div class="modal__message  mt-2 mb-4 mx-5">aaaaaa</div> -->
+            </div>
+            <div class="">
+
+            </div>
+            <div class="modal__btn mx-4">
+                <v-btn class="action ml-auto" tile color="#5F5F5F" dark large @click="dialog=false"><p>Agregar a la lista</p></v-btn>
+                <!-- <v-btn  class="action" tile color="#FF0000" dark large :loading="loading" @click="submit"><p>Aceptar</p></v-btn> -->
+            </div>
+        </v-container>
+    </v-card>
+</v-dialog>

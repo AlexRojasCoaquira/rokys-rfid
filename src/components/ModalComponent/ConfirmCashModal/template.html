@@ -1,0 +1,17 @@
+<v-dialog v-model="dialog" persistent width="380">
+    <v-card style="min-height: 200px;" class="d-flex align-center justify-center">
+        <v-container fluid class="modal py-4">
+            <div class="">
+                <div class="modal__title d-flex justify-space-between ml-4">
+                    <p>{{title}}</p>
+                    <img src="@/assets/images/logo-covid.svg" alt="" style="height: 45px;" class="mr-5">
+                </div>
+                <div class="modal__message  mt-2 mb-4 mx-5">{{warning}}</div>
+            </div>
+            <div class="modal__btn mx-4">
+                <v-btn class="action mr-2" tile color="#5F5F5F" dark large @click="cancel"><p>Cancelar</p></v-btn>
+                <v-btn  class="action" tile color="#20252C" dark large :loading="loading" @click="submit"><p>Aceptar</p></v-btn>
+            </div>
+        </v-container>
+    </v-card>
+</v-dialog>
